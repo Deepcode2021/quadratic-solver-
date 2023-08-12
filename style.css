@@ -1,0 +1,362 @@
+
+  @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap');
+
+body {
+    background-color: rgb(23, 23, 23);
+
+
+}
+
+.main {
+    color: aliceblue;
+    font-family: arial;
+    font-size: 24px;
+    margin: 10%;
+    width: 350px;
+    height: 280px;
+    /* background-color: rgb(54, 54, 54) */
+
+}
+
+.x2 {
+    /* color: rgb(0, 255, 255); */
+    border-radius: 20px;
+    width: 50%;
+    height: 15%;
+    font-size: large;
+    border: none;
+    padding: 10;
+    font-weight: bold;
+
+}
+.input2{
+    margin-top: vh;
+    position: absolute;
+}
+.input3{
+    position: relative;
+    margin-top: 0vh;
+}
+.output{
+    border-radius: 20px;
+    /* width: 50%;
+    height: 25%; */
+    margin-top: 2vh;
+    border: lime;
+    color: rgba(84, 234, 84, 0.684);
+    font-size: 5vmax;
+    border: none;
+    padding: 10;
+    font-weight: bold;
+    
+}
+#outputx{
+    position: relative;
+    
+}
+
+.button {
+  background-color: #c2fbd7;
+  margin-left: 70%;
+  margin-top: 4vh;
+  border-radius: 100px;
+  box-shadow: rgba(44, 187, 99, .2) 0 -25px 18px -14px inset,rgba(44, 187, 99, .15) 0 1px 2px,rgba(44, 187, 99, .15) 0 2px 4px,rgba(44, 187, 99, .15) 0 4px 8px,rgba(44, 187, 99, .15) 0 8px 16px,rgba(44, 187, 99, .15) 0 16px 32px;
+  color: green;
+  cursor: pointer;
+  display: inline-block;
+  font-family: CerebriSans-Regular,-apple-system,system-ui,Roboto,sans-serif;
+  padding: 7px 20px;
+  text-align: center;
+  text-decoration: none;
+  transition: all 250ms;
+  border: 0;
+  font-size: 16px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button:hover {
+  box-shadow: rgba(44,187,99,.35) 0 -25px 18px -14px inset,rgba(44,187,99,.25) 0 1px 2px,rgba(44,187,99,.25) 0 2px 4px,rgba(44,187,99,.25) 0 4px 8px,rgba(44,187,99,.25) 0 8px 16px,rgba(44,187,99,.25) 0 16px 32px;
+  transform: scale(1.05) rotate(-1deg);
+}
+.formula1{
+    border: 1px solid rgba(63, 225, 51, 0.43);
+    text-align: center;
+    padding: auto;
+    margin-top: 2vh;
+    border-radius: 20px;
+}
+.formulaD{
+    border-top: 1px solid rgb(255, 255, 255);
+    width:8cm;
+    /* width: 26vw; */
+    padding: 0%;
+    text-align: center;
+}
+.factor1{
+    border: 1px solid rgba(26, 248, 10, 0.659);
+    margin-top: 6vh;
+    width: 55vmax;
+    height: 10vh;
+    font-family: 'Oswald', sans-serif;
+    padding-top: 2%;
+    font-weight: 600;
+    text-align: center;
+    padding: auto;
+    border-radius: 50px;
+}
+@media screen and (min-width: 600px) {
+    .output{
+        font-size: 150%;
+    }
+    .formulaD{
+        border-top: 1px solid rgb(255, 255, 255);
+        width: 6cm;
+    }
+}
+@media screen and (min-width: 1070px) {
+    .formulaD{
+        width: 5cm;
+    }
+}
+.xbox {
+    font-size: 400px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -51%);
+    text-shadow: 0px 0px 4px #30a754;
+    z-index: -999;
+    color: #1a1a1e;
+}
+
+.xbox .inside {
+    font-size: 200px;
+    background-image: linear-gradient(180deg, rgb(125, 125, 125) 10%, #171717 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    /* text-fill-color: transparent; */
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    text-shadow: none;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    z-index: 99;
+}
+
+.xbox:before {
+    content: attr(data-char);
+    font-size: 400px;
+    position: absolute;
+    text-shadow: 0px 0px 5px #00ff55;
+    clip-path: polygon(0% 100%,
+            0% 0%,
+            100% 0%,
+            100% 50%,
+            50% 50%,
+            100% 50%,
+            100% 100%);
+    animation-name: loading;
+    animation-duration: 10s;
+    animation-delay: -0.1s;
+    animation-timing-function: cubic-bezier(0, 0.1, 0.9, 0.81);
+    animation-direction: reverse;
+    mix-blend-mode: color;
+}
+
+.xbox:after {
+    content: attr(data-char);
+    font-size: 400px;
+    position: absolute;
+    text-shadow: 0px 0px 5px black;
+    clip-path: polygon(0% 100%,
+            0% 0%,
+            100% 0%,
+            100% 50%,
+            50% 50%,
+            100% 50%,
+            100% 100%);
+    animation-name: loading;
+    animation-duration: 10s;
+    animation-timing-function: cubic-bezier(0, 0.1, 0.9, 0.81);
+    animation-direction: reverse;
+    mix-blend-mode: color;
+    left: 0;
+    top: 0;
+}
+
+@keyframes loading {
+    0% {
+        clip-path: polygon(0% 100%,
+                0% 0%,
+                100% 0%,
+                100% 50%,
+                50% 50%,
+                100% 50%,
+                100% 100%);
+    }
+
+    12.5% {
+        clip-path: polygon(0% 100%,
+                0% 0%,
+                100% 0%,
+                100% 50%,
+                50% 50%,
+                100% 100%,
+                100% 100%);
+    }
+
+    25% {
+        clip-path: polygon(0% 100%,
+                0% 0%,
+                100% 0%,
+                100% 50%,
+                50% 50%,
+                50% 100%,
+                50% 100%);
+    }
+
+    37.5% {
+        clip-path: polygon(0% 100%,
+                0% 0%,
+                100% 0%,
+                100% 50%,
+                50% 50%,
+                0% 100%,
+                0% 100%);
+    }
+
+    50% {
+        clip-path: polygon(0% 50%,
+                0% 0%,
+                100% 0%,
+                100% 50%,
+                50% 50%,
+                0% 50%,
+                0% 50%);
+    }
+
+    62.5% {
+        clip-path: polygon(0% 0%, 0% 0%, 100% 0%, 100% 50%, 50% 50%, 0% 0%, 0% 0%);
+    }
+
+    75% {
+        clip-path: polygon(50% 0%,
+                50% 0%,
+                100% 0%,
+                100% 50%,
+                50% 50%,
+                50% 0%,
+                50% 0%);
+    }
+
+    87.5% {
+        clip-path: polygon(100% 0%,
+                100% 0%,
+                100% 0%,
+                100% 50%,
+                50% 50%,
+                100% 0%,
+                100% 0%);
+    }
+
+    100% {
+        clip-path: polygon(100% 50%,
+                100% 50%,
+                100% 50%,
+                100% 50%,
+                50% 50%,
+                100% 50%,
+                100% 50%);
+    }
+}
+
+@keyframes loading2 {
+    0% {
+        clip-path: polygon(0% 100%,
+                0% 0%,
+                100% 0%,
+                100% 50%,
+                50% 50%,
+                100% 50%,
+                100% 100%);
+    }
+
+    12.5% {
+        clip-path: polygon(0% 100%,
+                0% 0%,
+                100% 0%,
+                100% 50%,
+                50% 50%,
+                100% 100%,
+                100% 100%);
+    }
+
+    25% {
+        clip-path: polygon(0% 100%,
+                0% 0%,
+                100% 0%,
+                100% 50%,
+                50% 50%,
+                50% 100%,
+                50% 100%);
+    }
+
+    37.5% {
+        clip-path: polygon(0% 100%,
+                0% 0%,
+                100% 0%,
+                100% 50%,
+                50% 50%,
+                0% 100%,
+                0% 100%);
+    }
+
+    50% {
+        clip-path: polygon(0% 50%,
+                0% 0%,
+                100% 0%,
+                100% 50%,
+                50% 50%,
+                0% 50%,
+                0% 50%);
+    }
+
+    62.5% {
+        clip-path: polygon(0% 0%, 0% 0%, 100% 0%, 100% 50%, 50% 50%, 0% 0%, 0% 0%);
+    }
+
+    75% {
+        clip-path: polygon(50% 0%,
+                50% 0%,
+                100% 0%,
+                100% 50%,
+                50% 50%,
+                50% 0%,
+                50% 0%);
+    }
+
+    87.5% {
+        clip-path: polygon(100% 0%,
+                100% 0%,
+                100% 0%,
+                100% 50%,
+                50% 50%,
+                100% 0%,
+                100% 0%);
+    }
+
+    100% {
+        clip-path: polygon(100% 50%,
+                100% 50%,
+                100% 50%,
+                100% 50%,
+                50% 50%,
+                100% 50%,
+                100% 50%);
+    }
+}
+
